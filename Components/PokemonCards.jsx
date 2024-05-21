@@ -32,43 +32,41 @@ const PokemonCards = () => {
 
     //         );})}
     // </ScrollView>
-   
-      <FlatList
-        data={PokemonData}
-        renderItem={(pokemon) => {
-            console.log(pokemon.item.name)
-          return (
-            <View style={Style.card} key={pokemon.name}>
-              <View style={Style.nameContainer}>
-                <Text style={Style.name}>{pokemon.item.name}</Text>
-                <Text style={Style.hp}>❤{pokemon.item.hp}</Text>
-              </View>
+    <FlatList
+      data={PokemonData}
+      renderItem={(pokemon) => {
+        console.log(pokemon.item.name);
+        return (
+          <View style={Style.card} key={pokemon.name}>
+            <View style={Style.nameContainer}>
+              <Text style={Style.name}>{pokemon.item.name}</Text>
+              <Text style={Style.hp}>❤{pokemon.item.hp}</Text>
+            </View>
 
-              <Image
-                style={Style.image}
-                source={pokemon.item.image}
-                resizeMode="contain"
-              />
+            <Image
+              style={Style.image}
+              source={pokemon.item.image}
+              resizeMode="contain"
+            />
 
-              <View style={Style.typeContainer}>
-                <View
-                  style={[Style.badge, { borderColor: pokemon.item.borderColor }]}
-                >
-                  <Text style={Style.typeText}>{pokemon.item.type}</Text>
-                  <Text style={Style.typeText}>{pokemon.item.emoji}</Text>
-                </View>
-              </View>
-              <View>
-                <Text>Moves : {pokemon.item.moves.join(", ")}</Text>
-              </View>
-              <View>
-                <Text>Weakness : {pokemon.item.weaknesses.join(",")}</Text>
+            <View style={Style.typeContainer}>
+              <View
+                style={[Style.badge, { borderColor: pokemon.item.borderColor }]}
+              >
+                <Text style={Style.typeText}>{pokemon.item.type}</Text>
+                <Text style={Style.typeText}>{pokemon.item.emoji}</Text>
               </View>
             </View>
-          );
-        }}
-      />
-    
+            <View>
+              <Text>Moves : {pokemon.item.moves.join(", ")}</Text>
+            </View>
+            <View>
+              <Text>Weakness : {pokemon.item.weaknesses.join(",")}</Text>
+            </View>
+          </View>
+        );
+      }}
+    />
   );
 };
 
